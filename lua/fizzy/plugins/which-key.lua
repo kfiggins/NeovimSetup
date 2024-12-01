@@ -19,6 +19,8 @@ return {
       { "<leader>t", group = "Tabs" },
       { "<leader>w", group = "Restore Session" },
       { "<leader>x", group = "Diagnostics" },
+      { "<leader>h", group = "Harpoon" },
+      { "<leader>g", group = "Git Signs" },
     })
   end,
 }
