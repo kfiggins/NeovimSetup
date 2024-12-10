@@ -49,12 +49,23 @@ return {
       },
     }
 
+    -- Function to show parent folder and file name
+    local function parent_and_file()
+      local file = vim.fn.expand("%:t") -- Get the file name
+      if file == "index.js" then
+        local parent = vim.fn.expand("%:h:t") -- Get the parent folder
+        return parent .. "/" .. file
+      end
+      return file
+    end
+
     -- configure lualine with modified theme
     lualine.setup({
       options = {
         theme = my_lualine_theme,
       },
       sections = {
+        lualine_c = { parent_and_file },
         lualine_x = {
           {
             lazy_status.updates,
